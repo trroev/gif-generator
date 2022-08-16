@@ -26,12 +26,16 @@ body {
 }
 
 .gif-container {
-  margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  margin: 6rem 0 3rem 0;
+  width: 100%;
+  padding: 1rem;
 }
 
 img {
-  height: 333px;
-  width: auto;
+  height: 21rem;
+  max-width: 100%;
   box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -80,4 +84,28 @@ button:hover {
 button.random {
   width: 50%;
   align-self: center;
+  margin-bottom: 3rem;
+}
+
+.search-button {
+  margin-bottom: 3rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  font-size: 1.3rem;
+}
+
+.fa-github {
+  color: rgb(28, 28, 28);
+  font-size: 1.6rem;
+  transition: transform 0.7s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotateY(360deg) scale(1.15);
 }
