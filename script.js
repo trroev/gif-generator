@@ -4,12 +4,12 @@ const fetchGiphy = async (query) => {
   const img = document.querySelector("img");
 
   try {
-  const response = await fetch(url + query, { mode: "cors" });
-  const gifData = await response.json();
-  img.src = gifData.data.images.original.url;
+    const response = await fetch(url + query, { mode: "cors" });
+    const gifData = await response.json();
+    img.src = gifData.data.images.original.url;
   } catch (error) {
-      console.error("There was an error with the fetch request", error);
-    };
+    console.error("There was an error with the fetch request", error);
+  }
 };
 
 fetchGiphy("nic-cage-AND-nicolas-cage");
@@ -24,14 +24,18 @@ const handleButtons = (() => {
   });
 
   searchBtn.addEventListener("click", () => {
-    const searchInput = document.querySelector("#gif-search").value.split(" ").join("+").toLowerCase();
+    const searchInput = document
+      .querySelector("#gif-search")
+      .value.split(" ")
+      .join("+")
+      .toLowerCase();
 
     fetchGiphy(searchInput);
-  })
+  });
 
   input.addEventListener("keypress", (e) => {
-    if(e.keyCode == 13) {
+    if (e.keyCode == 13) {
       searchBtn.click();
     }
-  })
+  });
 })();
